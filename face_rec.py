@@ -30,7 +30,7 @@ def unknown_image_encoded(img):
     encode a face given the file name
     """
     face = fr.load_image_file("faces/" + img)
-   
+    encoding = fr.face_encodings(face)[0]
 
     return encoding
 
@@ -66,7 +66,7 @@ def classify_face(im):
         if matches[best_match_index]:
             name = known_face_names[best_match_index]
 
-        face_names=[]
+        face_names.append[name]
 
         for (top, right, bottom, left), name in zip(face_locations, face_names):
             # Draw a box around the face
